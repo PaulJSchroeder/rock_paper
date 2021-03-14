@@ -22,6 +22,7 @@ function playRound(playerSelection, computerSelection) {
     ", Its a draw! "
     let errorMessage = "Please enter a valid response.";
 //compare the two values and decide which one beats the other
+//add a point to whoever wins round
     if (playerSelection.toUpperCase() === "ROCK") {
         if (computerSelection === "Scissors") {
             ++playerScore;
@@ -72,11 +73,21 @@ function playRound(playerSelection, computerSelection) {
         console.log(playRound(playerSelection, computerSelection));
         console.log("Your score: " + playerScore + " Computer score: " + computerScore);
     }
+//report the winner at the end
+    if (playerScore > computerScore) {
+        console.log("You win the game! Final score: You: " + playerScore + ", Computer: " + computerScore);
+    } 
+    else if (computerScore > playerScore) {
+        console.log("Computer wins the game! Final score: You: " + playerScore + ", Computer: " + computerScore);
+    }
+    else if (computerScore === playerScore) {
+        console.log("It's a tie! Final score: You: " + playerScore + ", Computer: " + computerScore);
+    }
  }
  console.log(game());
 
  
- //report the winner at the end   
+   
 
 
 
